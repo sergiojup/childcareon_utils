@@ -1,0 +1,22 @@
+{
+  "name": "childcareon_utils",
+  "version": "1.0.0",
+  "description": "Childcare On utils functions",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sergiojup/childcareon_utils.git"
+  },
+  "keywords": [
+    "Utils"
+  ],
+  "author": "Sergio Juarez <sergio@childcareon.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sergiojup/childcareon_utils/issues"
+  },
+  "homepage": "https://github.com/sergiojup/childcareon_utils#readme"
+}
