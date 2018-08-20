@@ -24,3 +24,7 @@ exports.setNotification = (title,body,tag, extra) =>{
   if(typeof extra !== 'undefined') not.data = extra;
   return not;
 };
+
+exports.getDay = (date) => {
+  return exports.addLeadingZeros(date.getDate().toString()) + exports.addLeadingZeros((date.getMonth() +1).toString()) + date.getFullYear().toString().substring(2);
+};
