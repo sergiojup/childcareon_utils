@@ -30,6 +30,10 @@ exports.getDay = (date) => {
   return exports.addLeadingZeros(date.getDate().toString()) + exports.addLeadingZeros((date.getMonth() +1).toString()) + date.getFullYear().toString().substring(2);
 };
 
+exports.getBirthdateDate = (date) => {
+  return `${exports.addLeadingZeros(date.getDate().toString())}_${exports.addLeadingZeros((date.getMonth() +1).toString())}`;
+};
+
 exports.getPushText = (number,lang) => {
   console.log("lang is:",lang);
   switch(lang){
