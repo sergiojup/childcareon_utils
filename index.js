@@ -104,3 +104,37 @@ exports.getTranslated = (name, lang) => {
   };
   return namespace[name][lang];
 }
+
+exports.daysInMonth = (month, year) => {
+  return new Date(year, month +1, 0).getDate();
+}
+
+exports.attendance = {
+  parseAttendanceDate: (attendance) => {
+    let attendanceToR = {};
+    for (let dayTotal in attendance) {
+      const day = parseInt(dayTotal.substr(0,2));
+      const month = parseInt(dayTotal.substr(2,2)) -1;
+      const year = parseInt(`20${dayTotal.substr(4,2)}`);
+      const date = new Date(year,month,day,12).getTime();
+      attendanceToR[date] = attendance[dayTotal];
+    }
+    return attendanceToR;
+  },
+  getMaxMin: () => {
+    const start = new Date();
+    const finish = new Date();
+    let yearStart = start.getFullYear();
+    let yearFinish = finish.getFullYear();
+    if (start.getMonth() < startMonth) {
+      start.setFullYear(yearStart -1);
+    } else {
+      finish.setFullYear(yearFinish +1);
+    }
+    start.setMonth(8);
+    start.setDate(1);
+    finish.setMonth(7);
+    finish.setDate(31);
+    return {start: start, finish: finish};
+  }
+}
