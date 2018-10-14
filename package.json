@@ -1,6 +1,6 @@
 {
   "name": "childcareon_utils",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Childcare On utils functions",
   "main": "index.js",
   "scripts": {
