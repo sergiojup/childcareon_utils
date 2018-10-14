@@ -125,7 +125,7 @@ exports.attendance = {
     }
     return attendanceToR;
   },
-  getMaxMin: () => {
+  getMaxMin: (startMonth) => {
     const start = new Date();
     const finish = new Date();
     let yearStart = start.getFullYear();
