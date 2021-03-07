@@ -1,8 +1,9 @@
 {
   "name": "childcareon_utils",
-  "version": "1.0.7",
+  "version": "1.0.9",
   "description": "Childcare On utils functions",
   "main": "index.js",
+  "types": "index.d.ts",
   "scripts": {
     "test": "test"
   },

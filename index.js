@@ -31,7 +31,7 @@ exports.getDay = (date) => {
 };
 
 exports.getBirthdateDate = (date) => {
-  return `${exports.addLeadingZeros(date.getDate().toString())}_${exports.addLeadingZeros((date.getMonth() +1).toString())}`;
+  return `${exports.addLeadingZeros(date.getUTCDate().toString())}_${exports.addLeadingZeros((date.getUTCMonth() +1).toString())}`;
 };
 
 exports.getPushText = (number,lang) => {
