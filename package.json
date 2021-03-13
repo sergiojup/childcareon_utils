@@ -1,6 +1,6 @@
 {
   "name": "childcareon_utils",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "Childcare On utils functions",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
