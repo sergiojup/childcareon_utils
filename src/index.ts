@@ -1,18 +1,18 @@
-let notificationColor;
+let notificationColor: string;
 
-exports.init = (params) => {
+exports.init = (params: any) => {
   if(typeof params === 'undefined') return;
   if(params.hasOwnProperty('notificationColor')) notificationColor = params.notificationColor;
 };
 
-exports.addLeadingZeros = (num) => {
+exports.addLeadingZeros = (num: string) => {
   if(parseInt(num) < 10) return '0'+num;
   return num;
 };
 
-exports.setNotification = (title,body,tag, extra) =>{
+exports.setNotification = (title: string, body: string, tag: string, extra: string) =>{
   if(!(notificationColor)) notificationColor = "#208648";
-  let not = {
+  const not: any = {
     notification:{
       "title":title,
       "body":body,
@@ -26,15 +26,15 @@ exports.setNotification = (title,body,tag, extra) =>{
   return not;
 };
 
-exports.getDay = (date) => {
+exports.getDay = (date: Date) => {
   return exports.addLeadingZeros(date.getDate().toString()) + exports.addLeadingZeros((date.getMonth() +1).toString()) + date.getFullYear().toString().substring(2);
 };
 
-exports.getBirthdateDate = (date) => {
+exports.getBirthdateDate = (date: Date) => {
   return `${exports.addLeadingZeros(date.getUTCDate().toString())}_${exports.addLeadingZeros((date.getUTCMonth() +1).toString())}`;
 };
 
-exports.getPushText = (number,lang) => {
+exports.getPushText = (number: number, lang: string) => {
   console.log("lang is:",lang);
   switch(lang){
     case "en": return `You have ${number} new notifications`; break;
@@ -43,8 +43,8 @@ exports.getPushText = (number,lang) => {
   }
 };
 
-exports.getTranslated = (name, lang) => {
-  namespace = {
+exports.getTranslated = (name: string, lang: string) => {
+  const namespace: any = {
     monthName: {
       en: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
       es: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
@@ -109,13 +109,13 @@ exports.getTranslated = (name, lang) => {
   return namespace[name][lang];
 }
 
-exports.daysInMonth = (month, year) => {
+exports.daysInMonth = (month: number, year: number) => {
   return new Date(year, month +1, 0).getDate();
 }
 
 exports.attendance = {
-  parseAttendanceDate: (attendance) => {
-    let attendanceToR = {};
+  parseAttendanceDate: (attendance: any) => {
+    let attendanceToR: any = {};
     for (let dayTotal in attendance) {
       const day = parseInt(dayTotal.substr(0,2));
       const month = parseInt(dayTotal.substr(2,2)) -1;
@@ -125,7 +125,7 @@ exports.attendance = {
     }
     return attendanceToR;
   },
-  getMaxMin: (startMonth) => {
+  getMaxMin: (startMonth: number) => {
     const start = new Date();
     const finish = new Date();
     let yearStart = start.getFullYear();
